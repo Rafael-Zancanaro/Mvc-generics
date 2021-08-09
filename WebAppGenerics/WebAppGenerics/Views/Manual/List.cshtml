@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebAppGenerics.Models.Manual>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Produção)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estampador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Auxiliar)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Produção)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estampador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auxiliar)
+        </td>
+        <td>
+            <a href="/Manual/Edit/@item.Id" class="btn btn-warning">Editar</a>
+            <a href="/Manual/Delete/@item.Id" class="btn btn-danger">Deletar</a>
+            <a href="/Manual/Details/@item.Id" class="btn btn-primary">Detales</a>
+        </td>
+    </tr>
+}
+
+</table>

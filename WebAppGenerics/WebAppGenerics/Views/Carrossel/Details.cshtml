@@ -1,0 +1,42 @@
+﻿@model WebAppGenerics.Models.Carrossel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Carrossel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Produção)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Produção)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Operador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Operador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Revisor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Revisor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "List")
+</p>
