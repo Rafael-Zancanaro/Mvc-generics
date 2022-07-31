@@ -8,12 +8,10 @@ namespace WebAppGenerics.Models.Repository
     public class BaseRepository<T> where T: BaseModel
     {
         static List<T> lista = new List<T>();
-        static int id = 1;
         public void Create(T model) 
         {
-            model.Id = id;
+            model.Id = lista.Count + 1;
             lista.Add(model);
-            id++;
         }
 
         public List<T> Read() 
